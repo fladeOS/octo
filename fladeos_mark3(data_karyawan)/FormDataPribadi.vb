@@ -14,6 +14,7 @@
     Private Sub FormDataPribadi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ResetForm()
         SetOFD()
+        Koneksi.Hubungkan()
     End Sub
 
 
@@ -30,4 +31,7 @@
     End Sub
 
 
+    Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
+        Koneksi.Hubungkan()
+    End Sub
 End Class

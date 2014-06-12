@@ -22,8 +22,9 @@ Partial Class FormMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dataGridPribadi = New System.Windows.Forms.DataGridView()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.tbSearch = New System.Windows.Forms.TextBox()
         Me.lblNIK = New System.Windows.Forms.Label()
@@ -31,20 +32,30 @@ Partial Class FormMain
         Me.lblNama = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnDetail = New System.Windows.Forms.Button()
+        Me.btnHapus = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditDataPribadiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutThisVersionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContactUsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutThisVersionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnEditDataKeluarga = New System.Windows.Forms.Button()
+        Me.btnEditDataPribadi = New System.Windows.Forms.Button()
+        Me.btnEditPendidikanFormal = New System.Windows.Forms.Button()
+        Me.btnEditPendidikanNonFormal = New System.Windows.Forms.Button()
+        Me.btnEditPengalamanKerja = New System.Windows.Forms.Button()
+        Me.btnEditDataKarier = New System.Windows.Forms.Button()
+        Me.btnEditDataPenghargaan = New System.Windows.Forms.Button()
+        Me.btnEditDataPunishment = New System.Windows.Forms.Button()
+        Me.btnEditRiwayatPenyakit = New System.Windows.Forms.Button()
+        CType(Me.dataGridPribadi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'LinkLabel1
@@ -57,14 +68,24 @@ Partial Class FormMain
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "+Data Baru"
         '
-        'DataGridView1
+        'dataGridPribadi
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 67)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1112, 630)
-        Me.DataGridView1.TabIndex = 3
+        Me.dataGridPribadi.AllowUserToAddRows = False
+        Me.dataGridPribadi.AllowUserToDeleteRows = False
+        Me.dataGridPribadi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridPribadi.DefaultCellStyle = DataGridViewCellStyle1
+        Me.dataGridPribadi.Location = New System.Drawing.Point(21, 67)
+        Me.dataGridPribadi.Name = "dataGridPribadi"
+        Me.dataGridPribadi.ReadOnly = True
+        Me.dataGridPribadi.Size = New System.Drawing.Size(1112, 630)
+        Me.dataGridPribadi.TabIndex = 3
         '
         'btnSearch
         '
@@ -88,9 +109,8 @@ Partial Class FormMain
         Me.lblNIK.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNIK.Location = New System.Drawing.Point(1150, 133)
         Me.lblNIK.Name = "lblNIK"
-        Me.lblNIK.Size = New System.Drawing.Size(117, 20)
+        Me.lblNIK.Size = New System.Drawing.Size(0, 20)
         Me.lblNIK.TabIndex = 12
-        Me.lblNIK.Text = "102410101062"
         '
         'Label3
         '
@@ -108,9 +128,8 @@ Partial Class FormMain
         Me.lblNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNama.Location = New System.Drawing.Point(1150, 88)
         Me.lblNama.Name = "lblNama"
-        Me.lblNama.Size = New System.Drawing.Size(108, 20)
+        Me.lblNama.Size = New System.Drawing.Size(0, 20)
         Me.lblNama.TabIndex = 10
-        Me.lblNama.Text = "Iwan Bagus S"
         '
         'Label1
         '
@@ -124,43 +143,36 @@ Partial Class FormMain
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnDetail)
+        Me.GroupBox1.Controls.Add(Me.btnHapus)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Navy
         Me.GroupBox1.Location = New System.Drawing.Point(1149, 161)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(147, 113)
+        Me.GroupBox1.Size = New System.Drawing.Size(147, 81)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Options"
         '
-        'Button3
+        'btnDetail
         '
-        Me.Button3.Location = New System.Drawing.Point(6, 79)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(135, 23)
-        Me.Button3.TabIndex = 15
-        Me.Button3.Text = "Detail"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnDetail.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnDetail.Location = New System.Drawing.Point(6, 50)
+        Me.btnDetail.Name = "btnDetail"
+        Me.btnDetail.Size = New System.Drawing.Size(135, 23)
+        Me.btnDetail.TabIndex = 15
+        Me.btnDetail.Text = "Detail"
+        Me.btnDetail.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnHapus
         '
-        Me.Button2.Location = New System.Drawing.Point(6, 50)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(135, 23)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Hapus"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(6, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(135, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Edit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnHapus.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnHapus.Location = New System.Drawing.Point(6, 21)
+        Me.btnHapus.Name = "btnHapus"
+        Me.btnHapus.Size = New System.Drawing.Size(135, 23)
+        Me.btnHapus.TabIndex = 14
+        Me.btnHapus.Text = "Hapus"
+        Me.btnHapus.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -181,13 +193,13 @@ Partial Class FormMain
         'EditDataPribadiToolStripMenuItem
         '
         Me.EditDataPribadiToolStripMenuItem.Name = "EditDataPribadiToolStripMenuItem"
-        Me.EditDataPribadiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditDataPribadiToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.EditDataPribadiToolStripMenuItem.Text = "Logout"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'AboutToolStripMenuItem
@@ -196,6 +208,12 @@ Partial Class FormMain
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.AboutToolStripMenuItem.Text = "A&bout"
+        '
+        'AboutThisVersionToolStripMenuItem
+        '
+        Me.AboutThisVersionToolStripMenuItem.Name = "AboutThisVersionToolStripMenuItem"
+        Me.AboutThisVersionToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.AboutThisVersionToolStripMenuItem.Text = "About This Version"
         '
         'HelpToolStripMenuItem
         '
@@ -207,14 +225,127 @@ Partial Class FormMain
         'ContactUsToolStripMenuItem
         '
         Me.ContactUsToolStripMenuItem.Name = "ContactUsToolStripMenuItem"
-        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ContactUsToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.ContactUsToolStripMenuItem.Text = "&Contact Us"
         '
-        'AboutThisVersionToolStripMenuItem
+        'GroupBox2
         '
-        Me.AboutThisVersionToolStripMenuItem.Name = "AboutThisVersionToolStripMenuItem"
-        Me.AboutThisVersionToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.AboutThisVersionToolStripMenuItem.Text = "About This Version"
+        Me.GroupBox2.Controls.Add(Me.btnEditRiwayatPenyakit)
+        Me.GroupBox2.Controls.Add(Me.btnEditDataPunishment)
+        Me.GroupBox2.Controls.Add(Me.btnEditDataPenghargaan)
+        Me.GroupBox2.Controls.Add(Me.btnEditDataKarier)
+        Me.GroupBox2.Controls.Add(Me.btnEditPengalamanKerja)
+        Me.GroupBox2.Controls.Add(Me.btnEditPendidikanNonFormal)
+        Me.GroupBox2.Controls.Add(Me.btnEditPendidikanFormal)
+        Me.GroupBox2.Controls.Add(Me.btnEditDataKeluarga)
+        Me.GroupBox2.Controls.Add(Me.btnEditDataPribadi)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Navy
+        Me.GroupBox2.Location = New System.Drawing.Point(1149, 262)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(147, 285)
+        Me.GroupBox2.TabIndex = 16
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Edit"
+        '
+        'btnEditDataKeluarga
+        '
+        Me.btnEditDataKeluarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditDataKeluarga.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditDataKeluarga.Location = New System.Drawing.Point(6, 50)
+        Me.btnEditDataKeluarga.Name = "btnEditDataKeluarga"
+        Me.btnEditDataKeluarga.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditDataKeluarga.TabIndex = 15
+        Me.btnEditDataKeluarga.Text = "Data Keluarga"
+        Me.btnEditDataKeluarga.UseVisualStyleBackColor = True
+        '
+        'btnEditDataPribadi
+        '
+        Me.btnEditDataPribadi.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditDataPribadi.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditDataPribadi.Location = New System.Drawing.Point(6, 21)
+        Me.btnEditDataPribadi.Name = "btnEditDataPribadi"
+        Me.btnEditDataPribadi.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditDataPribadi.TabIndex = 14
+        Me.btnEditDataPribadi.Text = "Data Pribadi"
+        Me.btnEditDataPribadi.UseVisualStyleBackColor = True
+        '
+        'btnEditPendidikanFormal
+        '
+        Me.btnEditPendidikanFormal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditPendidikanFormal.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditPendidikanFormal.Location = New System.Drawing.Point(6, 79)
+        Me.btnEditPendidikanFormal.Name = "btnEditPendidikanFormal"
+        Me.btnEditPendidikanFormal.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditPendidikanFormal.TabIndex = 16
+        Me.btnEditPendidikanFormal.Text = "Pendidikan Formal"
+        Me.btnEditPendidikanFormal.UseVisualStyleBackColor = True
+        '
+        'btnEditPendidikanNonFormal
+        '
+        Me.btnEditPendidikanNonFormal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditPendidikanNonFormal.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditPendidikanNonFormal.Location = New System.Drawing.Point(6, 108)
+        Me.btnEditPendidikanNonFormal.Name = "btnEditPendidikanNonFormal"
+        Me.btnEditPendidikanNonFormal.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditPendidikanNonFormal.TabIndex = 17
+        Me.btnEditPendidikanNonFormal.Text = "Pendidikan non-Formal"
+        Me.btnEditPendidikanNonFormal.UseVisualStyleBackColor = True
+        '
+        'btnEditPengalamanKerja
+        '
+        Me.btnEditPengalamanKerja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditPengalamanKerja.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditPengalamanKerja.Location = New System.Drawing.Point(6, 137)
+        Me.btnEditPengalamanKerja.Name = "btnEditPengalamanKerja"
+        Me.btnEditPengalamanKerja.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditPengalamanKerja.TabIndex = 18
+        Me.btnEditPengalamanKerja.Text = "Pengalaman Kerja"
+        Me.btnEditPengalamanKerja.UseVisualStyleBackColor = True
+        '
+        'btnEditDataKarier
+        '
+        Me.btnEditDataKarier.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditDataKarier.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditDataKarier.Location = New System.Drawing.Point(6, 166)
+        Me.btnEditDataKarier.Name = "btnEditDataKarier"
+        Me.btnEditDataKarier.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditDataKarier.TabIndex = 19
+        Me.btnEditDataKarier.Text = "Data Karier"
+        Me.btnEditDataKarier.UseVisualStyleBackColor = True
+        '
+        'btnEditDataPenghargaan
+        '
+        Me.btnEditDataPenghargaan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditDataPenghargaan.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditDataPenghargaan.Location = New System.Drawing.Point(5, 195)
+        Me.btnEditDataPenghargaan.Name = "btnEditDataPenghargaan"
+        Me.btnEditDataPenghargaan.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditDataPenghargaan.TabIndex = 20
+        Me.btnEditDataPenghargaan.Text = "Data Penghargaan"
+        Me.btnEditDataPenghargaan.UseVisualStyleBackColor = True
+        '
+        'btnEditDataPunishment
+        '
+        Me.btnEditDataPunishment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditDataPunishment.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditDataPunishment.Location = New System.Drawing.Point(5, 224)
+        Me.btnEditDataPunishment.Name = "btnEditDataPunishment"
+        Me.btnEditDataPunishment.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditDataPunishment.TabIndex = 21
+        Me.btnEditDataPunishment.Text = "Data Punishment"
+        Me.btnEditDataPunishment.UseVisualStyleBackColor = True
+        '
+        'btnEditRiwayatPenyakit
+        '
+        Me.btnEditRiwayatPenyakit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditRiwayatPenyakit.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEditRiwayatPenyakit.Location = New System.Drawing.Point(6, 253)
+        Me.btnEditRiwayatPenyakit.Name = "btnEditRiwayatPenyakit"
+        Me.btnEditRiwayatPenyakit.Size = New System.Drawing.Size(135, 23)
+        Me.btnEditRiwayatPenyakit.TabIndex = 22
+        Me.btnEditRiwayatPenyakit.Text = "Riwayat Penyakit"
+        Me.btnEditRiwayatPenyakit.UseVisualStyleBackColor = True
         '
         'FormMain
         '
@@ -223,6 +354,7 @@ Partial Class FormMain
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(1350, 710)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.lblNIK)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lblNama)
@@ -230,7 +362,7 @@ Partial Class FormMain
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.tbSearch)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dataGridPribadi)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -238,16 +370,17 @@ Partial Class FormMain
         Me.Padding = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.Text = "Sistem Informasi Data Karyawan TTN v1.0"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataGridPribadi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dataGridPribadi As System.Windows.Forms.DataGridView
     Friend WithEvents btnSearch As System.Windows.Forms.Button
     Friend WithEvents tbSearch As System.Windows.Forms.TextBox
     Friend WithEvents lblNIK As System.Windows.Forms.Label
@@ -255,9 +388,8 @@ Partial Class FormMain
     Friend WithEvents lblNama As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btnDetail As System.Windows.Forms.Button
+    Friend WithEvents btnHapus As System.Windows.Forms.Button
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditDataPribadiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -266,4 +398,14 @@ Partial Class FormMain
     Friend WithEvents AboutThisVersionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContactUsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnEditDataKeluarga As System.Windows.Forms.Button
+    Friend WithEvents btnEditDataPribadi As System.Windows.Forms.Button
+    Friend WithEvents btnEditRiwayatPenyakit As System.Windows.Forms.Button
+    Friend WithEvents btnEditDataPunishment As System.Windows.Forms.Button
+    Friend WithEvents btnEditDataPenghargaan As System.Windows.Forms.Button
+    Friend WithEvents btnEditDataKarier As System.Windows.Forms.Button
+    Friend WithEvents btnEditPengalamanKerja As System.Windows.Forms.Button
+    Friend WithEvents btnEditPendidikanNonFormal As System.Windows.Forms.Button
+    Friend WithEvents btnEditPendidikanFormal As System.Windows.Forms.Button
 End Class
