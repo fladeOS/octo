@@ -80,7 +80,7 @@ Partial Class FormDataPribadi
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
         Me.lblFilename = New System.Windows.Forms.Label()
-        Me.btnTest = New System.Windows.Forms.Button()
+        Me.btnReset = New System.Windows.Forms.Button()
         CType(Me.pictKTP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -339,7 +339,7 @@ Partial Class FormDataPribadi
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(154, 605)
+        Me.btnCancel.Location = New System.Drawing.Point(140, 605)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(121, 34)
         Me.btnCancel.TabIndex = 51
@@ -651,15 +651,15 @@ Partial Class FormDataPribadi
         Me.lblFilename.TabIndex = 81
         Me.lblFilename.Text = "FileName"
         '
-        'btnTest
+        'btnReset
         '
-        Me.btnTest.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTest.Location = New System.Drawing.Point(301, 605)
-        Me.btnTest.Name = "btnTest"
-        Me.btnTest.Size = New System.Drawing.Size(121, 34)
-        Me.btnTest.TabIndex = 82
-        Me.btnTest.Text = "Test Koneksi"
-        Me.btnTest.UseVisualStyleBackColor = True
+        Me.btnReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.Location = New System.Drawing.Point(267, 605)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(121, 34)
+        Me.btnReset.TabIndex = 82
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
         '
         'FormDataPribadi
         '
@@ -669,7 +669,7 @@ Partial Class FormDataPribadi
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(495, 652)
-        Me.Controls.Add(Me.btnTest)
+        Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.lblFilename)
         Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.pictKTP)
@@ -730,7 +730,7 @@ Partial Class FormDataPribadi
         Me.Name = "FormDataPribadi"
         Me.Padding = New System.Windows.Forms.Padding(0, 0, 10, 10)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormDataPribadi"
+        Me.Text = "Form Data Pribadi"
         CType(Me.pictKTP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -794,6 +794,6 @@ Partial Class FormDataPribadi
     Friend WithEvents btnBrowse As System.Windows.Forms.Button
     Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
     Friend WithEvents lblFilename As System.Windows.Forms.Label
-    Friend WithEvents btnTest As System.Windows.Forms.Button
+    Friend WithEvents btnReset As System.Windows.Forms.Button
 
 End Class
