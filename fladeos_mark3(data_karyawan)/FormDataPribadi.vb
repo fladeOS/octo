@@ -69,18 +69,21 @@
         Dim tglLahir As Date = dateTanggalLahir.Value
         Dim agama As String = comboAgama.Text
         Dim suku As String = txtSuku.Text
-        Dim jenisKelamin As String = "L"
-        'If (comboJK.Text = "Laki-Laki") Then
-        '    jenisKelamin = "L"
-        'ElseIf (comboJK.Text = "Perempuan") Then
-        '    jenisKelamin = "P"
-        'End If
+
+        Dim jenisKelamin As String = vbNullString
+        If (comboJK.Text = "Laki-Laki") Then
+            jenisKelamin = "L"
+        ElseIf (comboJK.Text = "Perempuan") Then
+            jenisKelamin = "P"
+        End If
+
         Dim statusKawin As Byte = 0
-        'If (comboKawin.Text = "Kawin") Then
-        '    statusKawin = 0
-        'ElseIf (comboKawin.Text = "Belum Kawin") Then
-        '    statusKawin = 1
-        'End If
+        If (comboKawin.Text = "Kawin") Then
+            statusKawin = 0
+        ElseIf (comboKawin.Text = "Belum Kawin") Then
+            statusKawin = 1
+        End If
+
         Dim alamat As String = txtAlamat.Text
         Dim statusRumah As String = txtStatusRumah.Text
         Dim telepon As String = txtHP.Text
@@ -94,6 +97,6 @@
         Dim alasanMutasi As String = txtAlasanMutasi.Text
         Dim golDarah As String = comboDarah.Text
         Dim pathKTP As String = lblFilename.Text
-        Model.Database.InsertDataPribadi(NIK, namaLengkap, tempatLahir, tglLahir, agama, suku, alamat, statusRumah, telepon, identitas, jenisKelamin, statusKawin, jabatan, pengangkatan, statusPegawai, departemen, subDepartemen, mutasi, alasanMutasi, golDarah, pathKTP)
+        Model.Database.InsertDataPribadi(NIK, namaLengkap, tempatLahir, tglLahir.ToString("yyyy-MM-dd"), agama, suku, alamat, statusRumah, telepon, identitas, jenisKelamin, statusKawin, jabatan, pengangkatan.ToString("yyyy-MM-dd"), statusPegawai, departemen, subDepartemen, mutasi, alasanMutasi, golDarah, pathKTP)
     End Sub
 End Class
