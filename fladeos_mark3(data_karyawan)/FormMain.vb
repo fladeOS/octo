@@ -19,4 +19,12 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Model.Database.BrowseDataPribadi()
     End Sub
+
+    Private Sub btnEditDataPribadi_Click(sender As Object, e As EventArgs) Handles btnEditDataPribadi.Click
+        Model.Database.EditDataPribadi()
+    End Sub
+
+    Private Sub btnEditDataKeluarga_Click(sender As Object, e As EventArgs) Handles btnEditDataKeluarga.Click
+        Model.Database.EditDataKeluarga()
+    End Sub
 End Class

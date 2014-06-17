@@ -30,7 +30,7 @@ Partial Class FormDataPribadi
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTempatLahir = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblHeaderDataPribadi = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtSuku = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -48,7 +48,7 @@ Partial Class FormDataPribadi
         Me.txtNoIdentitas = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnSubmit = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.txtJabatan = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -128,7 +128,7 @@ Partial Class FormDataPribadi
         '
         Me.txtNamaLengkap.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNamaLengkap.Location = New System.Drawing.Point(13, 104)
-        Me.txtNamaLengkap.MaxLength = 100
+        Me.txtNamaLengkap.MaxLength = 200
         Me.txtNamaLengkap.Name = "txtNamaLengkap"
         Me.txtNamaLengkap.Size = New System.Drawing.Size(447, 22)
         Me.txtNamaLengkap.TabIndex = 4
@@ -162,15 +162,15 @@ Partial Class FormDataPribadi
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Tanggal Lahir"
         '
-        'Label15
+        'lblHeaderDataPribadi
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(9, 15)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(218, 24)
-        Me.Label15.TabIndex = 28
-        Me.Label15.Text = "Data Pribadi Karyawan"
+        Me.lblHeaderDataPribadi.AutoSize = True
+        Me.lblHeaderDataPribadi.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeaderDataPribadi.Location = New System.Drawing.Point(9, 15)
+        Me.lblHeaderDataPribadi.Name = "lblHeaderDataPribadi"
+        Me.lblHeaderDataPribadi.Size = New System.Drawing.Size(218, 24)
+        Me.lblHeaderDataPribadi.TabIndex = 28
+        Me.lblHeaderDataPribadi.Text = "Data Pribadi Karyawan"
         '
         'Label7
         '
@@ -328,23 +328,24 @@ Partial Class FormDataPribadi
         '
         'btnSubmit
         '
+        Me.btnSubmit.BackColor = System.Drawing.SystemColors.Control
         Me.btnSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.Location = New System.Drawing.Point(13, 605)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(121, 34)
         Me.btnSubmit.TabIndex = 50
         Me.btnSubmit.Text = "Submit"
-        Me.btnSubmit.UseVisualStyleBackColor = True
+        Me.btnSubmit.UseVisualStyleBackColor = False
         '
-        'btnCancel
+        'btnUpdate
         '
-        Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(140, 605)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(121, 34)
-        Me.btnCancel.TabIndex = 51
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Location = New System.Drawing.Point(140, 605)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(121, 34)
+        Me.btnUpdate.TabIndex = 51
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'txtJabatan
         '
@@ -667,7 +668,6 @@ Partial Class FormDataPribadi
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(495, 652)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.lblFilename)
@@ -700,7 +700,7 @@ Partial Class FormDataPribadi
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.txtJabatan)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.txtNoIdentitas)
         Me.Controls.Add(Me.Label17)
@@ -718,7 +718,7 @@ Partial Class FormDataPribadi
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtSuku)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.lblHeaderDataPribadi)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtTempatLahir)
         Me.Controls.Add(Me.Label5)
@@ -744,7 +744,7 @@ Partial Class FormDataPribadi
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtTempatLahir As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents lblHeaderDataPribadi As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtSuku As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
@@ -762,7 +762,7 @@ Partial Class FormDataPribadi
     Friend WithEvents txtNoIdentitas As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents btnSubmit As System.Windows.Forms.Button
-    Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents btnUpdate As System.Windows.Forms.Button
     Friend WithEvents txtJabatan As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
