@@ -27,4 +27,16 @@
     Private Sub btnEditDataKeluarga_Click(sender As Object, e As EventArgs) Handles btnEditDataKeluarga.Click
         Model.Database.EditDataKeluarga()
     End Sub
+
+    Private Sub btnEditPendidikanFormal_Click(sender As Object, e As EventArgs) Handles btnEditPendidikanFormal.Click
+        Model.Database.EditPendidikanFormal()
+    End Sub
+
+    Private Sub btnEditPendidikanNonFormal_Click(sender As Object, e As EventArgs) Handles btnEditPendidikanNonFormal.Click
+        Model.Database.EditPendidikanNonFormal()
+    End Sub
+
+    Private Sub btnEditPengalamanKerja_Click(sender As Object, e As EventArgs) Handles btnEditPengalamanKerja.Click
+        Model.Database.EditPengalamanKerja()
+    End Sub
 End Class
