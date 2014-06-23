@@ -39,4 +39,12 @@
     Private Sub btnEditPengalamanKerja_Click(sender As Object, e As EventArgs) Handles btnEditPengalamanKerja.Click
         Model.Database.EditPengalamanKerja()
     End Sub
+
+    Private Sub btnEditDataKarier_Click(sender As Object, e As EventArgs) Handles btnEditDataKarier.Click
+        Model.Database.EditKarier()
+    End Sub
+
+    Private Sub btnEditDataPenghargaan_Click(sender As Object, e As EventArgs) Handles btnEditDataPenghargaan.Click
+        Model.Database.EditPenghargaan()
+    End Sub
 End Class
