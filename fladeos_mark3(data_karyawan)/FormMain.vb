@@ -47,4 +47,12 @@
     Private Sub btnEditDataPenghargaan_Click(sender As Object, e As EventArgs) Handles btnEditDataPenghargaan.Click
         Model.Database.EditPenghargaan()
     End Sub
+
+    Private Sub btnEditDataPunishment_Click(sender As Object, e As EventArgs) Handles btnEditDataPunishment.Click
+        Model.Database.EditPunishment()
+    End Sub
+
+    Private Sub btnEditRiwayatPenyakit_Click(sender As Object, e As EventArgs) Handles btnEditRiwayatPenyakit.Click
+        Model.Database.EditRiwayatPenyakit()
+    End Sub
 End Class
