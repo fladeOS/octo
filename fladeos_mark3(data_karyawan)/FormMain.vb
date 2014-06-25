@@ -55,4 +55,9 @@
     Private Sub btnEditRiwayatPenyakit_Click(sender As Object, e As EventArgs) Handles btnEditRiwayatPenyakit.Click
         Model.Database.EditRiwayatPenyakit()
     End Sub
+
+    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        Dim NIK As String = dataGridPribadi.SelectedCells(0).Value
+        Model.Database.HapusDataPribadi(NIK)
+    End Sub
 End Class
