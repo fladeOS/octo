@@ -79,8 +79,8 @@ Partial Class FormDataPribadi
         Me.pictKTP = New System.Windows.Forms.PictureBox()
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.ofd = New System.Windows.Forms.OpenFileDialog()
-        Me.lblFilename = New System.Windows.Forms.Label()
         Me.btnReset = New System.Windows.Forms.Button()
+        Me.txtFileName = New System.Windows.Forms.TextBox()
         CType(Me.pictKTP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -642,16 +642,6 @@ Partial Class FormDataPribadi
         '
         Me.ofd.FileName = "ofd"
         '
-        'lblFilename
-        '
-        Me.lblFilename.AutoSize = True
-        Me.lblFilename.ForeColor = System.Drawing.Color.Blue
-        Me.lblFilename.Location = New System.Drawing.Point(124, 580)
-        Me.lblFilename.Name = "lblFilename"
-        Me.lblFilename.Size = New System.Drawing.Size(51, 13)
-        Me.lblFilename.TabIndex = 81
-        Me.lblFilename.Text = "FileName"
-        '
         'btnReset
         '
         Me.btnReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -662,6 +652,13 @@ Partial Class FormDataPribadi
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
+        'txtFileName
+        '
+        Me.txtFileName.Location = New System.Drawing.Point(127, 573)
+        Me.txtFileName.Name = "txtFileName"
+        Me.txtFileName.Size = New System.Drawing.Size(333, 20)
+        Me.txtFileName.TabIndex = 83
+        '
         'FormDataPribadi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -669,8 +666,8 @@ Partial Class FormDataPribadi
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(495, 652)
+        Me.Controls.Add(Me.txtFileName)
         Me.Controls.Add(Me.btnReset)
-        Me.Controls.Add(Me.lblFilename)
         Me.Controls.Add(Me.btnBrowse)
         Me.Controls.Add(Me.pictKTP)
         Me.Controls.Add(Me.Label32)
@@ -793,7 +790,7 @@ Partial Class FormDataPribadi
     Friend WithEvents pictKTP As System.Windows.Forms.PictureBox
     Friend WithEvents btnBrowse As System.Windows.Forms.Button
     Friend WithEvents ofd As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents lblFilename As System.Windows.Forms.Label
     Friend WithEvents btnReset As System.Windows.Forms.Button
+    Friend WithEvents txtFileName As System.Windows.Forms.TextBox
 
 End Class

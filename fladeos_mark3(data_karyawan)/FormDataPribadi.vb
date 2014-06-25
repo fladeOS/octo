@@ -25,7 +25,7 @@
         Me.txtAlasanMutasi.Text = vbNullString
         Me.comboDarah.Text = vbNullString
         Me.pictKTP.ImageLocation = vbNullString
-        Me.lblFilename.Text = vbNullString
+        Me.txtFileName.Text = vbNullString
     End Sub
 
     'set properties untuk OpenFIleDialog
@@ -49,7 +49,7 @@
         If ofd.ShowDialog = Windows.Forms.DialogResult.OK Then
             'Menampilkan gambar ke dalam picture box
             pictKTP.ImageLocation = ofd.FileName
-            lblFilename.Text = ofd.FileName
+            txtFileName.Text = ofd.FileName
         End If
     End Sub
 
@@ -93,7 +93,8 @@
         Dim mutasi As String = txtMutasi.Text
         Dim alasanMutasi As String = txtAlasanMutasi.Text
         Dim golDarah As String = comboDarah.Text
-        Dim pathKTP As String = lblFilename.Text
+
+        Dim pathKTP = System.IO.Path.GetFullPath(txtFileName.Text)
 
         If (txtNIK.Text = vbNullString) Then
             MessageBox.Show("Silahkan isi NIK!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -153,7 +154,8 @@
         Dim mutasi As String = txtMutasi.Text
         Dim alasanMutasi As String = txtAlasanMutasi.Text
         Dim golDarah As String = comboDarah.Text
-        Dim pathKTP As String = lblFilename.Text
+        
+        Dim pathKTP = System.IO.Path.GetFullPath(txtFileName.Text)
 
         If (txtNIK.Text = vbNullString) Then
             MessageBox.Show("Silahkan isi NIK!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
