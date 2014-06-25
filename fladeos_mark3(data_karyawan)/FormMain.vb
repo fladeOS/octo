@@ -60,4 +60,13 @@
         Dim NIK As String = dataGridPribadi.SelectedCells(0).Value
         Model.Database.HapusDataPribadi(NIK)
     End Sub
+
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Dim nama As String = txtSearch.Text
+        Model.Database.SearchData(nama)
+    End Sub
+
+    Private Sub txtSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyDown
+        If e.KeyCode = Keys.Escape Then txtSearch.Text = vbNullString
+    End Sub
 End Class

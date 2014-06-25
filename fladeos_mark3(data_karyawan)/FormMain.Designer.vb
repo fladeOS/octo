@@ -22,11 +22,10 @@ Partial Class FormMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.dataGridPribadi = New System.Windows.Forms.DataGridView()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.tbSearch = New System.Windows.Forms.TextBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.lblNIK = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblNama = New System.Windows.Forms.Label()
@@ -53,6 +52,7 @@ Partial Class FormMain
         Me.btnEditDataKeluarga = New System.Windows.Forms.Button()
         Me.btnEditDataPribadi = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.dataGridPribadi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -74,35 +74,27 @@ Partial Class FormMain
         Me.dataGridPribadi.AllowUserToAddRows = False
         Me.dataGridPribadi.AllowUserToDeleteRows = False
         Me.dataGridPribadi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridPribadi.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridPribadi.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridPribadi.Location = New System.Drawing.Point(21, 67)
         Me.dataGridPribadi.Name = "dataGridPribadi"
         Me.dataGridPribadi.ReadOnly = True
         Me.dataGridPribadi.Size = New System.Drawing.Size(1112, 630)
         Me.dataGridPribadi.TabIndex = 3
         '
-        'btnSearch
+        'txtSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(1058, 32)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 5
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'tbSearch
-        '
-        Me.tbSearch.Location = New System.Drawing.Point(860, 35)
-        Me.tbSearch.Name = "tbSearch"
-        Me.tbSearch.Size = New System.Drawing.Size(192, 20)
-        Me.tbSearch.TabIndex = 4
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(941, 30)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(192, 26)
+        Me.txtSearch.TabIndex = 4
         '
         'lblNIK
         '
@@ -359,6 +351,16 @@ Partial Class FormMain
         Me.Button1.Text = "Refresh Data"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(801, 38)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(132, 13)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "Enter Name to Search"
+        '
         'FormMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -366,6 +368,7 @@ Partial Class FormMain
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(1350, 710)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.lblNIK)
@@ -373,8 +376,7 @@ Partial Class FormMain
         Me.Controls.Add(Me.lblNama)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnSearch)
-        Me.Controls.Add(Me.tbSearch)
+        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.dataGridPribadi)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -394,8 +396,7 @@ Partial Class FormMain
     End Sub
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents dataGridPribadi As System.Windows.Forms.DataGridView
-    Friend WithEvents btnSearch As System.Windows.Forms.Button
-    Friend WithEvents tbSearch As System.Windows.Forms.TextBox
+    Friend WithEvents txtSearch As System.Windows.Forms.TextBox
     Friend WithEvents lblNIK As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lblNama As System.Windows.Forms.Label
@@ -422,4 +423,5 @@ Partial Class FormMain
     Friend WithEvents btnEditPendidikanNonFormal As System.Windows.Forms.Button
     Friend WithEvents btnEditPendidikanFormal As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
